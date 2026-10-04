@@ -1,0 +1,15 @@
+## Interface: 16001
+## AllowLoadGameType: camelot
+## Title: LFGForever
+## Notes: Visual enhancements for the Looking For Group finder.
+## Author: Pinta365@GitHub
+## Version: 0.1.0
+## Category: Group Finder
+## SavedVariables: LFGForeverDB
+
+src\Core.lua
+src\Skin.lua
+src\Browse.lua
+src\WhoList.lua
+src\Listing.lua
+src\Commands.lua
