@@ -3,7 +3,7 @@
 ## Title: LFGForever
 ## Notes: Visual enhancements for the Looking For Group finder.
 ## Author: Pinta365@GitHub
-## Version: 0.1.0
+## Version: 0.1.1
 ## Category: Group Finder
 ## SavedVariables: LFGForeverDB
 ## X-Curse-Project-ID: 1726814
