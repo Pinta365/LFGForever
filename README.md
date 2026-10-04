@@ -17,6 +17,13 @@ LFGForever is a lightweight addon that enhances Blizzard's Looking For Group fin
 
 Hover over a member icon to see their name, level, class and zone.
 
+## Download
+
+You can download LFGForever from these popular sources:
+
+* [Wago Addons](https://addons.wago.io/addons/lfgforever)
+* [CurseForge](https://www.curseforge.com/wow/addons/lfgforever)
+
 ## Slash Commands
 
 LFGForever offers the following slash commands:
