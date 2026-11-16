@@ -31,7 +31,7 @@ function L.Guard(feature, fn)
   local function onError(err)
     broken = true
     geterrorhandler()(err)
-    L.Say("%s turned off after an error; /reload to retry.", feature)
+    L.Say(L.L.FEATURE_DISABLED, feature)
   end
   return function(...)
     if broken then return end

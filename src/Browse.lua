@@ -62,7 +62,7 @@ end
 local function slotOnEnter(slot)
   if slot.openRole then
     ownTooltip(slot)
-    GameTooltip:AddLine("Open spot for your role", 0.3, 0.95, 0.4)
+    GameTooltip:AddLine(L.L.OPEN_SPOT, 0.3, 0.95, 0.4)
     GameTooltip:AddLine(_G[slot.openRole] or slot.openRole, 1, 1, 1)
     GameTooltip:Show()
     return

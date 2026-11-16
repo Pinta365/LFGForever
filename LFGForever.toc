@@ -9,6 +9,7 @@
 ## X-Curse-Project-ID: 1726814
 ## X-Wago-ID: aND9QJ6o
 
+src\Locale.lua
 src\Core.lua
 src\Skin.lua
 src\Browse.lua
