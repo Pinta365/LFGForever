@@ -14,4 +14,5 @@ src\Skin.lua
 src\Browse.lua
 src\WhoList.lua
 src\Listing.lua
+src\Filters.lua
 src\Commands.lua

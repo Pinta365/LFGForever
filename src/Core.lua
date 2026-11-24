@@ -2,6 +2,21 @@ local ADDON, L = ...
 
 local defaults = {
   debug = false,
+  filters = {
+    panelOpen = true,
+    groups = true,
+    players = true,
+    hideDelisted = false,
+    openForMe = false,
+    hasTank = false,
+    hasHealer = false,
+    hideFull = false,
+    roles = { tank = true, healer = true, dps = true },
+    minLevel = 0,
+    maxLevel = 0,
+    classes = {},     -- classFilename -> false when hidden
+    playstyles = {},  -- tostring(generalPlaystyle) -> false when hidden
+  },
 }
 
 local function fillMissing(target, template)
@@ -13,6 +28,14 @@ local function fillMissing(target, template)
       target[k] = v
     end
   end
+end
+
+function L.ResetFilters()
+  local f = L.db.filters
+  local open = f.panelOpen
+  wipe(f)
+  fillMissing(f, defaults.filters)
+  f.panelOpen = open
 end
 
 function L.Say(fmt, ...)

@@ -49,6 +49,10 @@ local function memberInfo(resultID, index)
   return info
 end
 
+L.IsSecret = isSecret
+L.AnySecret = anySecret
+L.MemberInfo = memberInfo
+
 local function classColor(classFilename)
   return classFilename and RAID_CLASS_COLORS[classFilename] or NORMAL_FONT_COLOR
 end
@@ -251,11 +255,11 @@ end
 
 -- Dungeon-style activities track remaining slots per role; for everything else a role is
 -- open while nobody in the group has it and the group isn't full.
-local function openRolesForPlayer(row, result, maxPlayers)
+local function openRolesForPlayer(resultID, result, maxPlayers)
   local open = {}
   if result.hasSelf or result.isDelisted then return open end
   local mine = C_LFGListRoles and C_LFGListRoles.GetRoles()
-  local counts = C_LFGList.GetSearchResultMemberCounts(row.resultID)
+  local counts = C_LFGList.GetSearchResultMemberCounts(resultID)
   if not mine or not counts then return open end
 
   local dungeonRoles = false
@@ -280,6 +284,7 @@ local function openRolesForPlayer(row, result, maxPlayers)
   end
   return open
 end
+L.OpenRolesForPlayer = openRolesForPlayer
 
 local function updateGroup(row, result, x, disabled, hasComment)
   local numMembers = result.numMembers or 0
@@ -308,7 +313,7 @@ local function updateGroup(row, result, x, disabled, hasComment)
   for _, tex in ipairs(x.Roles) do tex:Hide() end
 
   local _, maxPlayers = LFGBrowseUtil_GetBestDisplayTypeForActivityIDs(result.activityIDs)
-  local openRoles = openRolesForPlayer(row, result, maxPlayers)
+  local openRoles = openRolesForPlayer(row.resultID, result, maxPlayers)
   local slotsWanted = math.max(#members, (maxPlayers and maxPlayers <= MAX_SLOTS) and maxPlayers or 0)
   slotsWanted = math.max(slotsWanted, #members + #openRoles)
   local shown = math.min(slotsWanted, MAX_SLOTS)

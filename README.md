@@ -17,6 +17,17 @@ LFGForever is a lightweight addon that enhances Blizzard's Looking For Group fin
 
 Hover over a member icon to see their name, level, class and zone.
 
+### Filters
+
+A filter panel docks to the right of the group finder (close it with its X, reopen it with the spyglass button). Your choices are saved between sessions.
+
+* **Show:** groups, solo players or both, and optionally hide delisted listings.
+* **Groups:** only groups with a spot for your role, groups that already have a tank or a healer, and hide full groups.
+* **Players:** filter solo players by role, level range ("Near me" picks your level ±3) and class.
+* **Playstyle:** hide listings with playstyles you're not after.
+
+The panel shows how many listings it's hiding, and Reset brings everything back. Your own listing is never hidden.
+
 ## Download
 
 You can download LFGForever from these popular sources:
@@ -28,6 +39,8 @@ You can download LFGForever from these popular sources:
 
 LFGForever offers the following slash commands:
 
+* `/lfgf filters`: Shows or hides the filter panel.
+* `/lfgf reset`: Resets all filters.
 * `/lfgf debug`: Toggles debug mode.
 * `/lfgf help`: Displays a help message with usage instructions.
 
